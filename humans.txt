@@ -1,0 +1,13 @@
+﻿/* TEAM */
+	Chef, UI Developer, Illustrator, Standard Man & Web Designer: Albert W
+	Contact: http://AlbertW.tk/contacto
+	Twitter: @albertw7
+	Email: contacto.albertw[at]gmail.com
+	From: Ciudad Real, Spain
+	
+	
+/* SITE */
+	Last update: 2014/06/29
+	Language: Castellano
+	Doctype:HTML5
+	IDE: Notepad++, FileZilla, Photoshop

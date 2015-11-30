@@ -1,0 +1,228 @@
+﻿body {
+	background-color: #DDD;
+}
+a{
+	color: #03C;
+}
+a:hover {
+	color: #006;
+	text-decoration: none;
+}
+a:active {
+	color: #006;
+	text-decoration: none;
+}
+.header {
+    text-align:center;
+    margin: 0 auto;
+	margin-top: 30px;
+    padding-top: 5px;
+	font-size: 20px;
+	text-decoration: none;
+}
+#logo {
+	text-decoration: none;
+}
+
+.main {
+	margin: 0 auto;
+	margin-top: 0px;
+    margin-bottom: 30px;
+	background-color: #DDD;
+	width: 1100px;
+}
+.rightPanel {
+	background-color: #69F;
+	padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+	height: 400px;
+	width: 230px;
+	margin-left: 870px;
+	margin-top: -40px;
+	margin-right: 10px;
+	border-radius: 3px;
+}
+#headerPanel {
+	background-color: orange;
+	height:40px;
+	width: 850px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: space-around; 
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#centerPanel {
+    position: relative;
+	background-color: white;
+	margin-top: -367px;
+	width: 850px;
+    padding-top: 0.01px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+.headerElement {
+	text-align: center;
+	position:relative;
+	float: left;
+	margin-top: 3px;
+	margin-left: 33px;
+    margin-right: 33px;
+	border-radius: 7px;
+	background-color: orange;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: black;
+	transition:background-color 500ms;
+	-webkit-transition:background-color 500ms;
+	transition-timing-function: ease;
+	-webkit-transition-timing-function: ease;
+}
+.aHeader {
+	text-decoration: none;
+}
+.headerElement:hover {
+	background-color: whitesmoke;
+	color: black;
+}
+.headerElement:active {
+	background-color: white;
+	color: gray;
+}
+.post {
+	position: relative;
+	background-color: white;
+	width: 770px;
+	margin-left: 15px;
+    padding: 15px;
+    padding-bottom: 20px;
+    padding-right: 0px;
+	text-align: justify;
+}
+div {
+	font-family: Arial, Helvetica;
+	font-size: 14px;
+}
+h1 {
+	font-family: "Arial Black", Tahoma;
+	font-size: 19px;
+    text-align: center;
+}
+h2
+{
+	font-size: 17px;
+}
+.post h1 {
+	text-align: left;
+}
+p {
+	font-family: Arial, Helvetica;
+	font-size: small;
+}
+li {
+	list-style: square;
+	font-family: Arial, Helvetica;
+	font-size: small;
+}
+li a
+{
+    text-decoration: none;
+    color: black;
+}
+li a:hover{
+    color:black;
+}
+li a:active {
+    color: black;
+}
+ul a {
+    text-decoration: none;
+}
+.liMarker {
+    list-style: square;
+	list-style-image:url('/images/albertw16.ico');
+    margin-bottom: 17px;
+    padding-top: 10px;
+	font-family: Tahoma;
+	font-size: small;
+}
+footer {
+	font-family: Arial, Helvetica;
+	font-size: small;
+	text-align: center;
+    width: 850px;
+    background-color: white;
+    border-radius: 10px;
+}
+#Index {
+    position: relative;
+	margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px 30px;
+	background-color: #06C;
+	width: 300px;
+    border-radius: 10px;
+}
+#divComentario
+{
+border: 1px solid #06C;
+text-align:center;
+float:right;
+margin-right: 30px;
+background-color: #EEE;
+padding: 5px;
+border-radius:5px;
+}
+#divComentario a
+{
+	text-decoration: none;
+}
+.comentarios {
+	position: relative;
+	background-color: white;
+	width: 570px;
+	margin-left: 15px;
+    padding: 15px;
+    padding-bottom: 20px;
+    padding-right: 0px;
+	text-align: justify;
+}
+#img
+{
+	display:block;
+	text-align:center;
+}
+#imgPost
+{
+	border: 2px solid #DDD;
+}
+#numComentario
+{
+	padding: 5px;
+	background-color: #DDD !important;
+	border-radius: 2px;
+}
+#titlePost
+{
+	text-decoration: none;
+	color: black;
+}
+#titlePost:hover
+{
+	color: black;
+	text-decoration: none;
+	text-decoration-line: underline;
+	-moz-text-decoration-line: underline;
+}
+#titlePost:active
+{
+	color: #222;
+	text-decoration: none;
+	text-decoration-line: underline;
+	-moz-text-decoration-line: underline;
+}

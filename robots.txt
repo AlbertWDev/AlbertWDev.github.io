@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /error.php
+Disallow: /rightPanel.php
+Disallow: /moderacion
+Disallow: /comentar.php
+Disallow: /config.php
+Disallow: /footer.php
+Disallow: /noticia.php
+Disallow: /robots.txt
