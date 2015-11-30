@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<head>
+	<title>Gráfico de barras | Albert W</title>
+	<style>
+		.center {
+			margin: 0 auto;
+			background-color: #CCC;
+			border-radius: 5px;
+			padding: 20px;
+			width: 475px;
+		}
+		#valores {
+			margin: 0 auto;
+			width: 250px;
+		}
+	</style>
+		<script>
+		function dibujarEjes() {
+			var canvasGrafico = document.getElementById('grafico');
+			if(canvasGrafico.getContext){
+				var grafico = canvasGrafico.getContext('2d');
+				
+				//Ejes
+				grafico.beginPath();
+				grafico.moveTo(35, 30);
+				grafico.lineTo(35, 335);
+				grafico.lineTo(435, 335);
+				
+				//Indicadores de los ejes
+				grafico.moveTo(30, 35);
+				grafico.lineTo(35, 35);
+				grafico.moveTo(30, 110);
+				grafico.lineTo(35, 110);
+				grafico.moveTo(30, 185);
+				grafico.lineTo(35, 185);
+				grafico.moveTo(30, 260);
+				grafico.lineTo(35, 260);
+				grafico.moveTo(30, 335);
+				grafico.lineTo(35, 335);
+				grafico.stroke();
+				
+				grafico.font="14px Arial";
+				
+				//Números de los indicadores de los ejes
+				grafico.fillText("100", (28 - (grafico.measureText("100").width)), 40);
+				grafico.fillText("75", (28 - (grafico.measureText("75").width)), 115);
+				grafico.fillText("50", (28 - (grafico.measureText("50").width)), 190);
+				grafico.fillText("25", (28 - (grafico.measureText("25").width)), 265);
+				grafico.fillText("0", (28 - (grafico.measureText("0").width)), 340);
+				
+				//Nombres de las columnas
+				(85 - (grafico.measureText("Columna 1").width / 2))
+				grafico.fillText("Columna 1", (85 - (grafico.measureText("Columna 1").width / 2)), 350, 75);
+				grafico.fillText("Columna 2", (160 - (grafico.measureText("Columna 1").width / 2)), 350, 75);
+				grafico.fillText("Columna 3", (235 - (grafico.measureText("Columna 1").width / 2)), 350, 75);
+				grafico.fillText("Columna 4", (310 - (grafico.measureText("Columna 1").width / 2)), 350, 75);
+				grafico.fillText("Columna 5", (385 - (grafico.measureText("Columna 1").width / 2)), 350, 75);
+				
+				
+				actualizar();
+			}
+			setInterval('actualizar()', 1000);
+		}
+		function actualizar() {
+			var canvasGrafico = document.getElementById('grafico');
+			var grafico = canvasGrafico.getContext('2d');
+			grafico.clearRect(35, 0, 400, 335);
+			var columna1=document.getElementById('columna1').value;
+			var columna2=document.getElementById('columna2').value;
+			var columna3=document.getElementById('columna3').value;
+			var columna4=document.getElementById('columna4').value;
+			var columna5=document.getElementById('columna5').value;
+			
+			grafico.fillRect(60, 335, 50, (parseInt(columna1) * (-1) * 3));
+			grafico.fillRect(135, 335, 50, (parseInt(columna2) * (-1) * 3));
+			grafico.fillRect(210, 335, 50, (parseInt(columna3) * (-1) * 3));
+			grafico.fillRect(285, 335, 50, (parseInt(columna4) * (-1) * 3));
+			grafico.fillRect(360, 335, 50, (parseInt(columna5) * (-1) * 3));
+			
+			//Valor que aparece encima de la columna
+			grafico.fillText(columna1, (((50 - grafico.measureText(columna1).width) / 2) + 60), (335 - (parseInt(columna1) + 1) * 3));
+			grafico.fillText(columna2, (((50 - grafico.measureText(columna2).width) / 2) + 135), (335 - (parseInt(columna2) + 1) * 3));
+			grafico.fillText(columna3, (((50 - grafico.measureText(columna3).width) / 2) + 210), (335 - (parseInt(columna3) + 1) * 3));
+			grafico.fillText(columna4, (((50 - grafico.measureText(columna4).width) / 2) + 285), (335 - (parseInt(columna4) + 1) * 3));
+			grafico.fillText(columna5, (((50 - grafico.measureText(columna5).width) / 2) + 360), (335 - (parseInt(columna5) + 1) * 3));
+		}
+	</script>
+</head>
+<body onload="dibujarEjes();">
+	<div class="center">
+		<canvas id="grafico" width="435" height="385">
+			<p>Tu navegador no soporta la etiqueta "canvas"</p>
+		</canvas>
+		</br>
+		</br>
+		<div id="valores">
+			<p>Columna 1: <input id="columna1" type="text" placeholder="Valor de la columna 1" value="75"></input></p>
+			<p>Columna 2: <input id="columna2" type="text" placeholder="Valor de la columna 2" value="100"></input></p>
+			<p>Columna 3: <input id="columna3" type="text" placeholder="Valor de la columna 3" value="0"></input></p>
+			<p>Columna 4: <input id="columna4" type="text" placeholder="Valor de la columna 4" value="35"></input></p>
+			<p>Columna 5: <input id="columna5" type="text" placeholder="Valor de la columna 5" value="87"></input></p>
+		</div>
+	</div>
+</body>

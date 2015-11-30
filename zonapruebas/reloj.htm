@@ -1,0 +1,270 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>Reloj | Albert W</title>
+    <style>
+		body {
+			padding: 0px;
+			margin: 0px;
+		}
+		#center {
+			width: 200px;
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+		.reloj {
+			padding: 0px;
+			margin: 0px;
+			margin-bottom: 20px;
+			width: 200px;
+			height: 200px;
+		}
+		#hours {
+			padding: 0px;
+			margin: 0px;
+			margin-top: -205px;
+			width: 200px;
+			height: 200px;
+		}
+		#minutes {
+			padding: 0px;
+			margin: 0px;
+			margin-top: -200px;
+			width: 200px;
+			height: 200px;
+		}
+		#seconds {
+			padding: 0px;
+			margin: 0px;
+			margin-top: -200px;
+			width: 200px;
+			height: 200px;
+		}
+		#hora {
+			text-align: center;
+		}
+		#fecha {
+			text-align: center;
+		}
+    </style>
+  </head>
+  <body>
+  <div id="center">
+	  <div class="reloj">
+			<div id="background">
+				<canvas id="canvasBackground" width="200" height="200"></canvas>
+			</div>
+			<div id="hours">
+				<canvas id="canvasHours" width="200" height="200"></canvas>
+			</div>
+			<div id="minutes">
+				<canvas id="canvasMinutes" width="200" height="200"></canvas>
+			</div>
+			<div id="seconds">
+				<canvas id="canvasSeconds" width="200" height="200"></canvas>
+			</div>
+		</div>
+		<div id="hora"></div>
+		<div id="fecha"></div>
+	</div>
+    <script>
+		var backgroundId = document.getElementById('canvasBackground');
+		var background = backgroundId.getContext('2d');
+		var hoursId = document.getElementById('canvasHours');
+		var hours = hoursId.getContext('2d');
+		var minutesId = document.getElementById('canvasMinutes');
+		var minutes = minutesId.getContext('2d');
+		var secondsId = document.getElementById('canvasSeconds');
+		var seconds = secondsId.getContext('2d');
+		background.lineWidth = 1;
+		background.arc(100, 100, 93, 0, 2 * Math.PI, true);
+		background.fillStyle = "whitesmoke";
+		background.fill();
+		background.strokeStyle = '#003300';
+		background.stroke();
+		background.beginPath();
+		background.arc(100, 100, 98, 0, 2 * Math.PI, true);
+		background.lineWidth = 3;
+		background.strokeStyle = '#007';
+		background.stroke();
+		background.translate(100, 100);
+		background.rotate(180*Math.PI/180);
+		
+		for (i = 1; i <= 12; i++) {
+			background.beginPath();
+			background.lineWidth = 3;
+			background.moveTo(0, 80);
+			background.lineTo(0, 91);
+			background.rotate(6*Math.PI/180);
+			background.stroke();
+		
+			background.beginPath();
+			background.lineWidth = 1;
+			for (a = 1; a <= 4; a++) {
+				background.moveTo(0, 83);
+				background.lineTo(0, 88);
+				background.rotate(6*Math.PI/180);
+			}
+			background.stroke();
+		}
+		
+		background.rotate(180*Math.PI/180);
+		background.translate(-100, -100);
+		background.fillStyle = "#000";
+		background.textBaseline = "middle";
+		background.fillText("1", 134, 40);
+		background.fillText("2", 160, 65);
+		background.fillText("3", 170, 100);
+		background.fillText("4", 160, 135);
+		background.fillText("5", 134, 160);
+		background.fillText("6", (100 - background.measureText("6").width / 2), 170);
+		background.fillText("7", 66, 160);
+		background.fillText("8", 40, 135);
+		background.fillText("9", 30, 100);
+		background.fillText("10", 40, 65);
+		background.fillText("11", 66, 40);
+		background.fillText("12", (100 - background.measureText("12").width / 2), 30);
+		
+		/*background.beginPath();
+		background.moveTo(100, 0);
+		background.lineTo(100, 200);
+		background.moveTo(0, 100);
+		background.lineTo(200, 100);
+		background.lineWidth = 1;
+		background.stroke();
+		*/
+		hours.translate(100, 100);
+		hours.rotate(180*Math.PI/180);
+		minutes.translate(100, 100);
+		minutes.rotate(180*Math.PI/180);
+		seconds.translate(100, 100);
+		seconds.rotate(180*Math.PI/180);
+		
+		var ss = 0;
+		var mm = 0;
+		var hh = 0;
+		function actualizarReloj() {
+			seconds.rotate((-1) * (ss*2*Math.PI/60));
+			seconds.rotate(180*Math.PI/180);
+			seconds.translate(-100, -100);
+			seconds.clearRect(0, 0, 200, 200);
+			seconds.translate(100, 100);
+			seconds.rotate(180*Math.PI/180);
+			
+			minutes.rotate((-1) * (mm*2*Math.PI/60));
+			minutes.rotate(180*Math.PI/180);
+			minutes.translate(-100, -100);
+			minutes.clearRect(0, 0, 200, 200);
+			minutes.translate(100, 100);
+			minutes.rotate(180*Math.PI/180);
+			
+			hours.rotate((-1) * (((hh*60/12) + Math.floor(5*mm/60))*2*Math.PI/60));
+			hours.rotate(180*Math.PI/180);
+			hours.translate(-100, -100);
+			hours.clearRect(0, 0, 200, 200);
+			hours.translate(100, 100);
+			hours.rotate(180*Math.PI/180);
+			
+			var date = new Date();
+			ss = date.getSeconds();
+			mm = date.getMinutes();
+			hh = date.getHours();
+			
+			seconds.rotate(ss*2*Math.PI/60);
+			seconds.beginPath();
+			seconds.lineWidth = 1;
+			seconds.moveTo(0, 0);
+			seconds.lineTo(0, 75);
+			seconds.strokeStyle = "#F00";
+			seconds.stroke();
+			
+			minutes.rotate(mm*2*Math.PI/60);
+			minutes.beginPath();
+			minutes.lineWidth = 2;
+			minutes.moveTo(0, 0);
+			minutes.lineTo(0, 75);
+			minutes.strokeStyle = "#000";
+			minutes.stroke();
+			
+			hours.rotate(((hh*60/12) + Math.floor(5*mm/60))*2*Math.PI/60);
+			hours.beginPath();
+			hours.lineWidth = 2;
+			hours.moveTo(0, 0);
+			hours.lineTo(0, 50);
+			hours.strokeStyle = "#000";
+			hours.stroke();
+			
+			switch(date.getDay()) {
+				case 1:
+				var semana = "Lunes";
+				break;
+				case 2:
+				var semana = "Martes";
+				break;
+				case 3:
+				var semana = "Miércoles";
+				break;
+				case 4:
+				var semana = "Jueves";
+				break;
+				case 5:
+				var semana = "Viernes";
+				break;
+				case 6:
+				var semana = "Sábado";
+				break;
+				case 0:
+				var semana = "Domingo";
+				break;
+			}
+			switch (date.getMonth()){
+				case 0:
+				var mes = "Ene";
+				break;
+				case 1:
+				var mes = "Feb";
+				break;
+				case 2:
+				var mes = "Mar";
+				break;
+				case 3:
+				var mes = "Abr";
+				break;
+				case 4:
+				var mes = "May";
+				break;
+				case 5:
+				var mes = "Jun";
+				break;
+				case 6:
+				var mes = "Jul";
+				break;
+				case 7:
+				var mes = "Ago";
+				break;
+				case 8:
+				var mes = "Sep";
+				break;
+				case 9:
+				var mes = "Oct";
+				break;
+				case 10:
+				var mes = "Nov";
+				break;
+				case 11:
+				var mes = "Dic";
+				break;
+			}
+			var hora = (date.getHours()<=9)?("0"+date.getHours()):date.getHours();
+			var minutos = (date.getMinutes()<=9)?("0"+date.getMinutes()):date.getMinutes();
+			var segundos = (date.getSeconds()<=9)?("0"+date.getSeconds()):date.getSeconds();
+			var fecha = semana + ", " + date.getDate() + " " + mes + " " + date.getFullYear();
+			var hora = hora + ":" + minutos + ":" + segundos;
+			document.getElementById('fecha').innerHTML = fecha;
+			document.getElementById('hora').innerHTML = hora;
+		}
+		actualizarReloj();
+		setInterval('actualizarReloj()', 1000);
+    </script>
+  </body>
+</html>
