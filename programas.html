@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Albert W</title>
+	<link rel="stylesheet" href="styles/style.css"/>
+	<link rel="shortcut icon" href="images/albertw16.ico" />
+	<link rel="author" href="humans.txt" />
+	<script src="ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	<script>
+	$(function() {
+		$('a[href*=#]:not([href=#])').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html,body').animate({
+						scrollTop: target.offset().top
+					}, 1000);
+					return false;
+				}
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+			<div class="header">
+				<a  id = "logo" href = "albertwdev.github.io"><img src="images/W_head.png" title="Albert W - Página principal" alt="Albert W"></a>
+			</div>
+			<div class="main">
+			<div id="headerPanel">
+				<a class="aHeader" href = "index.html">
+					<div class="headerElement">
+						Inicio
+					</div>
+				</a>
+				<a class="aHeader" href = "programas.html">
+					<div class="headerElement">
+						Programas
+					</div>
+				</a>
+				<a class="aHeader" href = "3dmodels.html">
+					<div class="headerElement">
+						Modelos 3D
+					</div>
+				</a>
+				<!--a class="aHeader" href = "games.html">
+					<div class="headerElement">
+						Juegos
+					</div>
+				</a-->
+				<a class="aHeader" href = "blog.html">
+					<div class="headerElement">
+						Blog
+					</div>
+				</a>
+				<a class="aHeader" href = "contacto.html">
+					<div class="headerElement">
+						Contacto
+					</div>
+				</a>
+			</div>
+			<div class = "rightPanel">
+				<h1>Programas</h1>
+				<ul>
+					<li style="padding-bottom:5px; list-style: none; list-style-position:outside;"><img style="vertical-align:middle;" src="images/programas/Irregular Verbs Checker icon.png" width="24" height="24"><a style="padding-left:10px;" href="posts/Irregular-Verbs-Checker.html" title="Irregular Verbs Checker">Irregular Verbs Checker</a></li>
+					<li style="padding-bottom:5px; list-style: none; list-style-position:outside;"><img style="vertical-align:middle;" src="images/programas/Coord Indicator icon.png" width="24" height="24"><a style="padding-left:10px;" href="posts/Coords-Indicator.html" title="Coords Indicator for Minecraft">Coords Indicator</a></li>
+				</ul>
+				<h1>Buscar</h1>
+				<script>
+					function buscarPanel(){
+						alert("Al mover el dominio a una página de github no está disponible esta función debido a que no se puede ejecutar código PHP. Disculpen las molestias");
+						/*var q = document.getElementById('q').value.replace(/ /g, "+");
+						location.href="http://albertw.tk/search.php?q=" + q;*/
+					}
+				</script>
+				<form method="POST" action="javascript:buscarPanel()">
+				<input id="q" type="text" placeholder="Buscar...">
+				<button type="submit">Buscar</button>
+				</form>
+				<p style="text-align: right;"><a href="archivo.html">Ver el archivo completo</a></p>
+				</br>
+				<p>Follow me on Twitter: <a style="text-decoration: none;" href="https://twitter.com/albertw7" target="_blank" title="AlbertW's Twitter">@albertw7</a></p>
+			</div>
+			<div id="centerPanel">
+				<div class="post">
+					<div id="Index">
+						<h1>Todos los programas</h1>
+						<ul>
+							<li class="liMarker"><a href="#CoordsIndicator" title="Coords Indicator for Minecraft"><b>Coords Indicator for Minecraft</b></a></li>
+							<li class="liMarker"><a href="#IrregularVerbsChecker" title="Irregular Verbs Checker"><b>Irregular Verbs Checker</b></a></li>
+						</ul>
+					</div>
+				</div>
+				<a id="CoordsIndicator"></a>
+				<div class="post">
+					<a id='titlePost' href='posts/Coords-Indicator.html'>
+						<h1 style='margin-bottom: 25px;'>Coords Indicator</h1>
+					</a>
+					<span id="img">
+						<a href="https://dl.dropboxusercontent.com/s/a2zg37ff746v81q/Coords%20Indicator%20for%20Minecraft.exe"title="Haz click para descargar">
+							<img id="imgPost" src="images/programas/Coord Indicator icon.png" alt=\"Coords Indicator\">
+						</a>
+					</span>
+					</br>
+					<p>Si no te gusta jugar con mods en Minecraft, o simplemente buscas un programa para apuntar las coordenadas, Coords Indicator está hecho para ti.</p>
+					<p>Solamente tienes que crear un nuevo archivo para tu mundo, darle a "Create Coord" y añadir las coordenadas que tú quieras.</p>
+					
+					<h2>Características:</h2>
+					<ul>
+						<li>Interfaz agradable y sencilla</li>
+						<li>Añade nuevas coordenadas rápidamente</li>
+						<li>Múltiples atributos para organizar todas tus coordenadas</li>
+						<li>Posibilidad de añadir propiedades adicionales.</li>
+						<li>No necesita instalación</li>
+						<li>Organiza todas las coordenadas en un solo archivo.</li>
+						<li>Selecciona un archivo a abrir por defecto</li>
+						<li>Crea tantos archivos de coordenadas como quieras</li>
+					</ul>
+					
+					<h2>Descarga:</h2>
+					<p>Para descargar este programa haz clic <a href="https://dl.dropboxusercontent.com/s/a2zg37ff746v81q/Coords%20Indicator%20for%20Minecraft.exe" title="Descargar Coords Indicator">aquí</a>.</p>
+					<hr style="margin-top: 25px; width: 700px; height:1px;">
+						<p style="margin-left:35px;font-size:small; color: #777">30 de Junio de 2014 a las 15:01</p>
+						<a style="margin-left: 40px;" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&text=Coords Indicator for Minecraft [albertwdev.github.io/posts/Coords-Indicator.html] vía @albertw7" title="Twittear"><img src="images/Twittear.PNG" title="Twittear" alt="Twittear"></a>
+						<a style="margin-left: 5px;" target="_blank" href="http://www.facebook.com/sharer.php?u=http://albertwdev.github.io/posts/Coords-Indicator.html" title="Compartir en Facebook"><img src="images/facebook.png" title="Compartir en Facebook" alt="Facebook"></a>
+						<div id="divComentario"><a href="posts/'.$qry[id_noticia].'/'.str_replace(,">Dejar un comentario</a></div>
+				</div>
+				<div style="background-color:#DDD;width:856px; height: 10px; margin-left:-3px;"></div>
+				
+				<a id="IrregularVerbsChecker"></a>
+				<div class="post">
+					<a id='titlePost' href='posts/enlace.htm'>
+						<h1 style='margin-bottom: 25px;'>Irregular Verbs Checker</h1>
+					</a>
+					
+					<span id="img">
+						<a href="https://dl.dropboxusercontent.com/s/x2kubk16b53hnzq/Irregular%20Verbs%20Checker.exe" title="Haz click para descargar">
+							<img id="imgPost" src="images/programas/Irregular Verbs Checker icon.png" alt="Irregular Verbs Checker">
+						</a>
+					</span>
+					</br>
+					<p>Si nunca se te han dado bien los verbos o simplemente quieres repasar un poco tienes Irregular Verbs Checker a tu disposición.</p>
+					<p>Puedes descargar el archivo de verbos predeterminado (con 152 verbos), añadirle y quitarle verbos a tu gusto e incluso crear tu propio archivo de verbos personalizado.</p>
+					
+					<h2>Características:</h2>
+					<ul>
+						<li>¡Añade y quita tantos verbos como quieras!</li>
+						<li>Crea tus propios exámenes con la cantidad de verbos que desees y serán corregidos al momento.</li>
+						<li>Mira la lista de verbos cuando quieras, tanto si quieres estudiar como buscar algún verbo específico</li>
+						<li>Interfaz cómoda y sencilla que te permitirá saber dónde está todo en cualquier momento</li>
+						<li>No necesita instalación</li>
+						<li>Puedes descargar un archivo con más de 150 verbos</li>
+						<li>Selecciona cuál de tus archivos de verbos se abrirá al inicar el programa</li>
+					</ul>
+					
+					<h2>Descarga:</h2>
+						<p>Para descargar este programa haz clic <a href="https://dl.dropboxusercontent.com/s/x2kubk16b53hnzq/Irregular%20Verbs%20Checker.exe" title="Descargar Irregular Verbs Checker">aquí</a>.<p>
+					
+					<hr style="margin-top: 25px; width: 700px; height:1px;">
+						<p style="margin-left:35px;font-size:small; color: #777">30 de Junio de 2014 a las 15:50</p>
+						<a style="margin-left: 40px;" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&text=Irregular Verbs Checker [albertwdev.github.io/posts/Irregular-Verbs-Checker.html] vía @albertw7" title="Twittear"><img src="images/Twittear.PNG" title="Twittear" alt="Twittear"></a>
+						<a style="margin-left: 5px;" target="_blank" href="http://www.facebook.com/sharer.php?u=http://albertwdev.github.io/posts/Irregular-Verbs-Checker.html" title="Compartir en Facebook"><img src="images/facebook.png" title="Compartir en Facebook" alt="Facebook"></a>
+				</div>
+				<div style="background-color:#DDD;width:856px; height: 10px; margin-left:-3px;"></div>
+			</div>
+			<footer><p>Albert W Official WebSite | Albert W <!--©--> 2014 | <a href="/humans.txt" title="humans.txt">humansTXT</a></p></footer>
+		</div>
+</body>
+</html>
